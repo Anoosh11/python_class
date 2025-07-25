@@ -18,7 +18,7 @@ def family_checker(family):
         return False
 
 def email_checker(email):
-    if type(email) == str and re.match(r"^[a-z][0-9._\s][a-z]@(gmail|msn|yahoo).com{3,50}$",email,re.I):
+    if type(email) == str and re.match(r"^[a-z][a-z0-9._\s]{3,50}@(gmail|msn|yahoo)[.]com$",email,re.I):
         print("email is:",email)
         return True
     else:
@@ -34,7 +34,7 @@ def mobile_checker(mobile):
         return False
 
 def national_code_checker(national_code):
-    if type(national_code) == str and re.match(r"^([0-9]{10}|[0-9]{3}-{6}\d-\d)$",national_code):
+    if type(national_code) == str and re.match(r"^([0-9]{10}|\d{3}_\d{6}_\d)$",national_code):
         print("national code is:",national_code)
         return True
     else:
@@ -42,7 +42,7 @@ def national_code_checker(national_code):
         return False
 
 def postal_code_checker(postal_code):
-    if type(postal_code) == str and re.match(r"^[a-zا-ی\s0-9.,]{3,50}$",postal_code,re.I):
+    if type(postal_code) == str and re.match(r"^[a-zا-ی0-9.,\s]{3,50}$",postal_code,re.I):
         print("postal code is:",postal_code)
         return True
     else:
